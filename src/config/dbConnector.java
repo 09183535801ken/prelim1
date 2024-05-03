@@ -22,7 +22,7 @@ public class dbConnector {
     Connection connect;
     public dbConnector(){
         try{
-            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/lbl_user", "root", "");
+            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/purisima", "root", "");
         }catch(SQLException ex){
             System.out.println("Can't connect to database: "+ex.getMessage());
         }

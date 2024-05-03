@@ -10,7 +10,9 @@ import com.mysql.jdbc.Connection;
 import config.Session;
 import config.dbConnector;
 import config.passwordHasher;
+import font.FontManager;
 import java.awt.Color;
+import java.awt.Font;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,6 +28,8 @@ public class loginForm extends javax.swing.JFrame {
     
     public loginForm() {
         initComponents();
+        jLabel1.setFont(FontManager.getFont("Poppins1").deriveFont(Font.PLAIN, 12));
+        jLabel2.setFont(FontManager.getFont("Poppins1").deriveFont(Font.PLAIN, 12));
     }
     
      static String status;
@@ -96,7 +100,6 @@ public class loginForm extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/usher (3).png"))); // NOI18N
 
@@ -119,7 +122,8 @@ public class loginForm extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(615, 370));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
 
@@ -134,6 +138,11 @@ public class loginForm extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 userFocusLost(evt);
+            }
+        });
+        user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userActionPerformed(evt);
             }
         });
 
@@ -165,12 +174,13 @@ public class loginForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setBackground(new java.awt.Color(102, 102, 102));
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 21)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
         jLabel8.setText("Login");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Hello, Let's get started!");
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,7 +209,7 @@ public class loginForm extends javax.swing.JFrame {
                     .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -210,7 +220,7 @@ public class loginForm extends javax.swing.JFrame {
                     .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,31 +251,25 @@ public class loginForm extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(350, 0, 350, 410);
+        jPanel2.setBounds(360, 0, 340, 410);
         jPanel1.add(jLabel4);
         jLabel4.setBounds(51, 92, 0, 0);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/usher (3).png"))); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(142, 34, 34));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel3)
-                .addGap(0, 94, Short.MAX_VALUE))
+            .addGap(0, 360, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 187, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 410, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(0, 0, 350, 410);
+        jPanel3.setBounds(0, 0, 360, 410);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -362,6 +366,10 @@ public class loginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passActionPerformed
 
+    private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -404,7 +412,6 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
